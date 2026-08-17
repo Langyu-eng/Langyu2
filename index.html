@@ -1,0 +1,1514 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>白泽宇 · 个人简历</title>
+<style>
+    :root {
+        --primary: #2563eb;
+        --primary-light: #3b82f6;
+        --primary-dark: #1d4ed8;
+        --secondary: #f59e0b;
+        --secondary-light: #fbbf24;
+        --bg: #f8fafc;
+        --bg-card: #ffffff;
+        --bg-alt: #f1f5f9;
+        --text: #0f172a;
+        --text-secondary: #475569;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        --radius: 12px;
+        --radius-sm: 8px;
+        --transition: 200ms ease;
+        --max-width: 1120px;
+        --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+        --nav-height: 64px;
+    }
+    [data-theme="dark"] {
+        --primary: #3b82f6;
+        --primary-light: #60a5fa;
+        --primary-dark: #2563eb;
+        --secondary: #fbbf24;
+        --secondary-light: #fcd34d;
+        --bg: #0f172a;
+        --bg-card: #1e293b;
+        --bg-alt: #0b1220;
+        --text: #e2e8f0;
+        --text-secondary: #94a3b8;
+        --text-muted: #64748b;
+        --border: #334155;
+        --shadow: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -1px rgba(0,0,0,0.3);
+        --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.5), 0 4px 6px -2px rgba(0,0,0,0.4);
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: var(--nav-height);
+    }
+    body {
+        font-family: var(--font);
+        background-color: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background-color var(--transition), color var(--transition);
+        -webkit-font-smoothing: antialiased;
+    }
+    a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: color var(--transition);
+    }
+    a:hover {
+        color: var(--primary-dark);
+    }
+    .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+    /* Header */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--nav-height);
+        background-color: var(--bg-card);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        transition: background-color var(--transition), border-color var(--transition);
+    }
+    .nav-container {
+        width: 100%;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+    .brand {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--text);
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-links a {
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        transition: background-color var(--transition), color var(--transition);
+    }
+    .nav-links a:hover {
+        background-color: var(--bg-alt);
+        color: var(--primary);
+    }
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .icon-btn {
+        background: none;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+    }
+    .icon-btn:hover {
+        background-color: var(--bg-alt);
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+    /* Hero */
+    .hero {
+        padding: calc(var(--nav-height) + 48px) 0 56px;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: #ffffff;
+        text-align: center;
+        border-bottom: 4px solid var(--secondary);
+    }
+    .hero .container {
+        max-width: 900px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+    }
+    .hero-avatar {
+        flex: 0 0 auto;
+    }
+    .hero-avatar img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid rgba(255,255,255,0.8);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .hero-avatar img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    }
+    .hero-text {
+        flex: 1 1 300px;
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .hero .subtitle {
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin-bottom: 12px;
+        opacity: 0.95;
+    }
+    .hero .summary {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 24px;
+        opacity: 0.92;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero .badges {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 28px;
+    }
+    .hero .badge {
+        background-color: rgba(255,255,255,0.2);
+        backdrop-filter: blur(8px);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid rgba(255,255,255,0.3);
+        color: #fff;
+    }
+    .hero .cta-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+    }
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+        border: none;
+        text-decoration: none;
+    }
+    .btn-primary {
+        background-color: #ffffff;
+        color: var(--primary-dark);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .btn-outline {
+        background-color: transparent;
+        color: #ffffff;
+        border: 2px solid rgba(255,255,255,0.7);
+    }
+    .btn-outline:hover {
+        background-color: rgba(255,255,255,0.1);
+        transform: translateY(-2px);
+    }
+    /* Sections */
+    section {
+        padding: 56px 0;
+    }
+    .section-title {
+        font-size: 1.9rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 8px;
+        color: var(--text);
+    }
+    .section-subtitle {
+        text-align: center;
+        color: var(--text-secondary);
+        margin-bottom: 32px;
+        font-size: 1rem;
+    }
+    .divider {
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        border-radius: 2px;
+        margin: 0 auto 24px;
+    }
+    /* Highlights */
+    .highlights-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+    }
+    .highlight-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        box-shadow: var(--shadow);
+        transition: transform var(--transition), box-shadow var(--transition);
+        text-align: center;
+    }
+    .highlight-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+    }
+    .highlight-number {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 8px;
+    }
+    .highlight-text {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    /* Tabs */
+    .tabs {
+        margin-top: 16px;
+    }
+    .tab-list {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 24px;
+    }
+    .tab-btn {
+        padding: 10px 20px;
+        border-radius: 30px;
+        border: 1px solid var(--border);
+        background-color: var(--bg-card);
+        color: var(--text-secondary);
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all var(--transition);
+    }
+    .tab-btn[aria-selected="true"] {
+        background-color: var(--primary);
+        color: #ffffff;
+        border-color: var(--primary);
+        box-shadow: 0 4px 10px rgba(37,99,235,0.3);
+    }
+    .tab-btn:hover:not([aria-selected="true"]) {
+        background-color: var(--bg-alt);
+        border-color: var(--primary-light);
+    }
+    .tab-panel {
+        display: none;
+        animation: fadeIn 0.3s ease;
+    }
+    .tab-panel.active {
+        display: block;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    /* Experience & Project cards */
+    .exp-card, .project-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        margin-bottom: 20px;
+        box-shadow: var(--shadow);
+        transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .exp-card:hover, .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+    .exp-header, .project-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 12px;
+        gap: 8px;
+    }
+    .exp-title, .project-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--text);
+    }
+    .exp-company, .project-period {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+    .exp-location, .project-location {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+    .exp-points {
+        list-style: none;
+        padding-left: 0;
+    }
+    .exp-points li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 8px;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    .exp-points li::before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: var(--secondary);
+        font-weight: bold;
+    }
+    .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 10px 0;
+    }
+    .tech-badge {
+        background-color: var(--bg-alt);
+        color: var(--primary);
+        padding: 4px 12px;
+        border-radius: 16px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        border: 1px solid var(--border);
+    }
+    .project-description {
+        color: var(--text-secondary);
+        margin: 10px 0;
+        font-size: 0.95rem;
+    }
+    .project-results {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 8px;
+    }
+    .project-results li {
+        padding-left: 20px;
+        position: relative;
+        margin-bottom: 4px;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+    .project-results li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #10b981;
+        font-weight: bold;
+    }
+    /* Skills */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    .skill-category {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: var(--shadow);
+    }
+    .skill-category h3 {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+        color: var(--text);
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 8px;
+    }
+    .skill-item {
+        margin-bottom: 12px;
+    }
+    .skill-label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+        color: var(--text-secondary);
+    }
+    .skill-bar {
+        height: 8px;
+        background-color: var(--bg-alt);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .skill-bar-fill {
+        height: 100%;
+        border-radius: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        transition: width 0.8s ease;
+    }
+    /* Education & Awards */
+    .edu-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        margin-bottom: 20px;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .edu-icon {
+        font-size: 2rem;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--bg-alt);
+        border-radius: 50%;
+    }
+    .edu-info {
+        flex: 1;
+        min-width: 220px;
+    }
+    .edu-info h3 {
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+    }
+    .edu-meta {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin-bottom: 8px;
+    }
+    .edu-courses {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+    }
+    .course-tag {
+        background-color: var(--bg-alt);
+        padding: 4px 10px;
+        border-radius: 14px;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        border: 1px solid var(--border);
+    }
+    .awards-section {
+        margin-top: 24px;
+    }
+    .awards-category {
+        margin-bottom: 16px;
+    }
+    .awards-category h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 8px;
+    }
+    .awards-list {
+        list-style: none;
+        padding-left: 0;
+    }
+    .awards-list li {
+        padding: 6px 0;
+        border-bottom: 1px dashed var(--border);
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+    .awards-list li:last-child {
+        border-bottom: none;
+    }
+    /* Certificate Gallery */
+    .cert-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 16px;
+        margin-top: 16px;
+    }
+    .cert-item {
+        position: relative;
+        cursor: pointer;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .cert-item:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+    .cert-item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+        background-color: var(--bg-alt);
+    }
+    .cert-item .cert-label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        color: #fff;
+        font-size: 0.75rem;
+        padding: 20px 8px 6px;
+        text-align: center;
+        pointer-events: none;
+    }
+    /* Lightbox */
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.9);
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+    }
+    .lightbox.active {
+        display: flex;
+    }
+    .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 8px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: none;
+        border: 2px solid #fff;
+        color: #fff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: background-color var(--transition);
+    }
+    .lightbox-close:hover {
+        background-color: rgba(255,255,255,0.2);
+    }
+    /* Contact */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+        margin-top: 24px;
+    }
+    .contact-item {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 16px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: transform var(--transition);
+    }
+    .contact-item:hover {
+        transform: translateY(-3px);
+    }
+    .contact-icon {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+    .contact-label {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+    .contact-value {
+        font-weight: 600;
+        color: var(--text);
+        word-break: break-all;
+    }
+    .copy-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--primary);
+        font-size: 0.9rem;
+        margin-top: 4px;
+        transition: color var(--transition);
+    }
+    .copy-btn:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+    }
+    /* Footer */
+    .footer {
+        background-color: var(--bg-card);
+        border-top: 1px solid var(--border);
+        padding: 24px 0;
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+    /* Back to top */
+    .back-to-top {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        color: #fff;
+        border: none;
+        box-shadow: var(--shadow-lg);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: all var(--transition);
+        z-index: 999;
+    }
+    .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .back-to-top:hover {
+        background-color: var(--primary-dark);
+    }
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+        .nav-container {
+            flex-wrap: wrap;
+            height: auto;
+            padding: 8px 16px;
+        }
+        .nav-links {
+            order: 3;
+            width: 100%;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .hero .container {
+            flex-direction: column;
+            text-align: center;
+        }
+        .hero-avatar img {
+            width: 110px;
+            height: 110px;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+        }
+        .hero .subtitle {
+            font-size: 1.1rem;
+        }
+        section {
+            padding: 40px 0;
+        }
+        .section-title {
+            font-size: 1.6rem;
+        }
+        .exp-header, .project-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .cert-item img {
+            height: 140px;
+        }
+    }
+    /* Print */
+    @media print {
+        .navbar, .back-to-top, .icon-btn, .copy-btn, .tab-list, .lightbox {
+            display: none !important;
+        }
+        body {
+            background-color: #fff;
+            color: #000;
+        }
+        .hero {
+            background: #2563eb !important;
+            color: #fff !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .tab-panel {
+            display: block !important;
+        }
+        .exp-card, .project-card, .highlight-card, .skill-category, .edu-card, .contact-item, .cert-item {
+            box-shadow: none;
+            border: 1px solid #ddd;
+            break-inside: avoid;
+        }
+        .cert-item img {
+            height: auto;
+            max-height: 120px;
+        }
+        section {
+            padding: 20px 0;
+        }
+        .container {
+            max-width: 100%;
+            padding: 0 12px;
+        }
+    }
+</style>
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#about" class="brand">白泽宇</a>
+            <nav class="nav-links" id="navLinks" aria-label="主导航"></nav>
+            <div class="nav-actions">
+                <button class="icon-btn" id="themeToggle" aria-label="切换深浅色模式" title="切换深浅色模式">🌓</button>
+                <button class="icon-btn" id="printBtn" aria-label="打印简历" title="打印简历">🖨️</button>
+            </div>
+        </div>
+    </header>
+    <main id="mainContent"></main>
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部">↑</button>
+    <footer class="footer" id="footer">
+        <p>© 2026 白泽宇 · 更新时间：2026.08</p>
+    </footer>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" aria-label="关闭">×</button>
+        <img id="lightboxImg" src="" alt="证书放大图">
+    </div>
+    <script>
+        (function() {
+            // 简历数据
+            const resume = {
+                name: "白泽宇",
+                brand: "白泽宇",
+                avatar: "大头照.jpg",
+                title: "校园大使 / 项目助理 / 暑期实习生",
+                subtitle: "管理咨询 · 产品运营 · 项目管理",
+                summary: "华中科技大学管理科学与工程专业新生，具备出色的演讲主持、组织协调与公益实践经验。擅长用数据与故事打动听众，用设计与剪辑传递价值。",
+                contact: {
+                    phone: "13947567654",
+                    email: "494856096@qq.com",
+                    wechat: "494856096",
+                    location: "内蒙古通辽 / 湖北武汉",
+                    political: "共青团员",
+                    linkedin: "",
+                    github: ""
+                },
+                keywords: ["演讲考级10级", "PPT设计", "视频剪辑", "公益组织", "班长", "宋庆龄奖学金", "架子鼓9级"],
+                highlights: [
+                    { number: "300+", text: "志愿服务小时数，服务留守儿童50余人" },
+                    { number: "国家级", text: "宋庆龄奖学金获得者（全国学生最高荣誉之一）" },
+                    { number: "一等奖×2", text: "市级演讲比赛一等奖，理论宣讲大赛二等奖" },
+                    { number: "20+", text: "主持校级/班级活动，覆盖超600人次" },
+                    { number: "30%", text: "视频与PPT制作效率提升，内容播放量超5000" }
+                ],
+                education: {
+                    school: "华中科技大学",
+                    major: "管理科学与工程",
+                    degree: "本科",
+                    period: "2026.09 - 2030.06（预计）",
+                    location: "武汉",
+                    gpa: "【待补】/ 4.0",
+                    courses: ["管理学原理","微观经济学","宏观经济学","统计学","运筹学","数据分析与决策","管理信息系统","项目管理","组织行为学"],
+                    highschoolNote: "高中阶段：连续多年担任班长及学科委员，统筹班级日常管理与学业活动，积累丰富组织协调经验。"
+                },
+                skills: [
+                    { category: "演讲与主持", items: [ { name: "演讲与主持", level: 95 }, { name: "大型活动主持", level: 92 }, { name: "路演答辩", level: 90 } ] },
+                    { category: "办公与设计", items: [ { name: "PowerPoint/Keynote", level: 90 }, { name: "视频剪辑（剪映/PR）", level: 85 }, { name: "信息可视化", level: 82 } ] },
+                    { category: "数据分析", items: [ { name: "Excel高级函数", level: 75 }, { name: "SQL基础", level: 60 }, { name: "Python数据分析", level: 55 } ] },
+                    { category: "乐器与舞台", items: [ { name: "架子鼓", level: 88 }, { name: "吉他", level: 70 }, { name: "舞台编排", level: 80 } ] },
+                    { category: "语言能力", items: [ { name: "普通话", level: 95 }, { name: "跨部门沟通", level: 90 }, { name: "现场控场", level: 88 } ] }
+                ],
+                experiences: [
+                    {
+                        id: "community",
+                        tabLabel: "社会实践",
+                        title: "社区公益项目 组织者/核心志愿者",
+                        company: "通辽市扎鲁特旗社区",
+                        period: "2023.09 - 2026.08",
+                        location: "通辽市扎鲁特旗",
+                        points: [
+                            "主导策划“关爱留守儿童”公益项目，招募并培训志愿者20余人，累计志愿服务超300小时，服务留守儿童50余人，获社区官方公众号报道",
+                            "发起“爱心资助”募捐活动，通过线上线下联动筹集善款【待补】元，资助贫困学生12名，活动参与人数超200人",
+                            "负责项目宣传视频拍摄与剪辑，产出公益短视频5条，发布后公众号阅读量提升150%，累计点赞量超2000",
+                            "担任公益晚会主持人及节目编排负责人，组织3场社区演出，现场参与人数累计超600人，观众满意度达95%"
+                        ]
+                    },
+                    {
+                        id: "class-leader",
+                        tabLabel: "校园领导力",
+                        title: "高中班级班长 / 学科委员",
+                        company: "通辽市某中学",
+                        period: "2019.09 - 2026.06",
+                        location: "通辽市",
+                        points: [
+                            "统筹班级日常管理，建立考勤、学业互助、值日轮值等制度，班级出勤率保持98%以上，所在班级获“优秀班集体”称号【待补】",
+                            "主导策划主题班会、考前动员、学习小组等活动30余场，班级平均成绩较入学提升约5%【待补】",
+                            "负责班会PPT制作与现场主持，累计主持校级/班级活动20余场，提升信息传达效率与班级凝聚力",
+                            "协调班委分工与跨班级资源，组织跨班级学习经验分享会5场，参与人数超300人，活动满意度达95%以上"
+                        ]
+                    }
+                ],
+                projects: [
+                    {
+                        id: "speech2026",
+                        tabLabel: "宣讲大赛",
+                        name: "“理响新征程”通辽市理论宣讲大赛",
+                        period: "2026.05 - 2026.07",
+                        location: "通辽市",
+                        tech: ["演讲", "PPT设计", "宣讲稿撰写"],
+                        description: "作为核心参赛选手，独立撰写宣讲稿，结合数据分析与真实案例，完成3轮试讲与内容迭代，最终获青年学生组二等奖（市级）。",
+                        results: ["获市级二等奖", "宣讲素材用于基层巡讲，覆盖超500人"]
+                    },
+                    {
+                        id: "video-ppt",
+                        tabLabel: "视频与PPT",
+                        name: "校园宣传视频与PPT设计项目",
+                        period: "2024.09 - 2026.08",
+                        location: "通辽/武汉",
+                        tech: ["视频剪辑", "PPT设计", "Premiere Pro", "剪映"],
+                        description: "独立完成多个校园活动宣传视频的脚本撰写、拍摄与后期剪辑，为班级、社团及志愿活动设计汇报PPT20余份，统一视觉风格与逻辑结构。",
+                        results: ["视频累计播放量超5000", "内容制作效率提升30%"]
+                    },
+                    {
+                        id: "speech2019",
+                        tabLabel: "演讲项目",
+                        name: "“爱我中华 我为祖国点赞”主题演讲",
+                        period: "2019.07 - 2019.09",
+                        location: "通辽市",
+                        tech: ["演讲", "视频剪辑", "PPT制作"],
+                        description: "负责演讲稿创作、背景视频剪辑与PPT制作，完成从选题、排练到舞台呈现的全流程设计与执行，获市级一等奖。",
+                        results: ["获市级一等奖", "演讲片段阅读量破万", "巡回演讲覆盖超1000人"]
+                    }
+                ],
+                awards: {
+                    national: [
+                        "宋庆龄奖学金（教育部、中国福利会、中国宋庆龄基金会，2022.08）",
+                        "第42届全国中学生物理竞赛省级赛区二等奖（2025.09）"
+                    ],
+                    provincial: [
+                        "“理响新征程”通辽市理论宣讲大赛青年学生组二等奖（中共通辽市委宣传部，2026.07）",
+                        "通辽市教育系统主题演讲比赛初中组一等奖（通辽市教育局，2022.09）",
+                        "通辽市“新时代好少年”（市委宣传部、市文明办、市教育局，2020.08）",
+                        "通辽市“爱我中华 我为祖国点赞”中小学生主题演讲一等奖（2019.09）",
+                        "通辽全市中小学生诚信主题书信征文高中组三等奖（2024.11）",
+                        "通辽全市抗战胜利80周年主题书信征文优秀作品三类（2025.10）"
+                    ],
+                    county: [
+                        "扎鲁特旗中小学“五好学生”（扎鲁特旗教育体育局，2025.06）",
+                        "扎鲁特旗“培育诚信文化 争做诚信少年”征文比赛高中组一等奖（旗委宣传部，2024.09）",
+                        "扎鲁特旗第四届美德少年（旗委宣传部、旗文明办）",
+                        "第十届上海国际青少年艺术节朗诵儿童B组特金奖（2017.08）",
+                        "通辽广播电视台“大地保险杯”少儿才艺大赛朗诵团体金奖（2016.12）",
+                        "通辽广播电视台“大地保险杯”少儿才艺大赛主持类初中组银奖（2019.11）",
+                        "通辽广播电视台少儿主持人大赛铜奖（2015.11）",
+                        "扎鲁特旗全民阅读朗读大会小学B组一等奖"
+                    ]
+                },
+                certificates: [
+                    "演讲考级10级证书",
+                    "架子鼓9级证书"
+                ],
+                certImages: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"],
+                aiCertImages: ["8.jpg", "9.jpg"]
+            };
+
+            // DOM 工具
+            const $ = (sel, parent = document) => parent.querySelector(sel);
+            const $$ = (sel, parent = document) => Array.from(parent.querySelectorAll(sel));
+
+            function createEl(tag, className, text) {
+                const el = document.createElement(tag);
+                if (className) el.className = className;
+                if (text !== undefined) el.textContent = text;
+                return el;
+            }
+
+            // 渲染导航
+            function renderNav() {
+                const navLinks = $('#navLinks');
+                const sections = [
+                    { id: 'about', label: '关于' },
+                    { id: 'highlights', label: '亮点' },
+                    { id: 'experience', label: '经历' },
+                    { id: 'projects', label: '项目' },
+                    { id: 'skills', label: '技能' },
+                    { id: 'education', label: '教育' },
+                    { id: 'awards', label: '证书' },
+                    { id: 'contact', label: '联系' }
+                ];
+                sections.forEach(s => {
+                    const a = createEl('a', '', s.label);
+                    a.href = `#${s.id}`;
+                    a.setAttribute('data-nav', s.id);
+                    navLinks.appendChild(a);
+                });
+            }
+
+            // 渲染 Hero
+            function renderHero() {
+                const main = $('#mainContent');
+                const hero = createEl('section', 'hero');
+                hero.id = 'about';
+                const container = createEl('div', 'container');
+                // 头像
+                const avatarDiv = createEl('div', 'hero-avatar');
+                const avatarImg = createEl('img', '', '');
+                avatarImg.src = resume.avatar;
+                avatarImg.alt = resume.name + '头像';
+                avatarDiv.appendChild(avatarImg);
+                // 文字区
+                const textDiv = createEl('div', 'hero-text');
+                const h1 = createEl('h1', '', resume.name);
+                const subtitle = createEl('div', 'subtitle', resume.subtitle);
+                const summary = createEl('p', 'summary', resume.summary);
+                const badges = createEl('div', 'badges');
+                resume.keywords.forEach(kw => {
+                    badges.appendChild(createEl('span', 'badge', kw));
+                });
+                const cta = createEl('div', 'cta-buttons');
+                const phoneBtn = createEl('a', 'btn btn-primary', '📞 电话联系');
+                phoneBtn.href = `tel:${resume.contact.phone}`;
+                const emailBtn = createEl('a', 'btn btn-outline', '✉️ 发送邮件');
+                emailBtn.href = `mailto:${resume.contact.email}`;
+                cta.appendChild(phoneBtn);
+                cta.appendChild(emailBtn);
+                textDiv.append(h1, subtitle, summary, badges, cta);
+                container.append(avatarDiv, textDiv);
+                hero.appendChild(container);
+                main.appendChild(hero);
+            }
+
+            // 渲染亮点
+            function renderHighlights() {
+                const main = $('#mainContent');
+                const sec = createEl('section', '');
+                sec.id = 'highlights';
+                const container = createEl('div', 'container');
+                container.appendChild(createEl('h2', 'section-title', '亮点成果'));
+                container.appendChild(createEl('div', 'divider'));
+                container.appendChild(createEl('p', 'section-subtitle', '可量化的核心成果'));
+                const grid = createEl('div', 'highlights-grid');
+                resume.highlights.forEach(h => {
+                    const card = createEl('div', 'highlight-card');
+                    card.appendChild(createEl('div', 'highlight-number', h.number));
+                    card.appendChild(createEl('div', 'highlight-text', h.text));
+                    grid.appendChild(card);
+                });
+                container.appendChild(grid);
+                sec.appendChild(container);
+                main.appendChild(sec);
+            }
+
+            // 渲染经历 Tabs
+            function renderExperience() {
+                const main = $('#mainContent');
+                const sec = createEl('section', '');
+                sec.id = 'experience';
+                const container = createEl('div', 'container');
+                container.appendChild(createEl('h2', 'section-title', '社会实践与领导力'));
+                container.appendChild(createEl('div', 'divider'));
+                container.appendChild(createEl('p', 'section-subtitle', '组织协调与公益实践'));
+
+                const tabsWrapper = createEl('div', 'tabs');
+                const tabList = createEl('div', 'tab-list');
+                tabList.setAttribute('role', 'tablist');
+                tabList.setAttribute('aria-label', '经历分类');
+                const panels = createEl('div', 'tab-panels');
+
+                resume.experiences.forEach((exp, index) => {
+                    const tabBtn = createEl('button', 'tab-btn', exp.tabLabel);
+                    tabBtn.setAttribute('role', 'tab');
+                    tabBtn.setAttribute('id', `exp-tab-${exp.id}`);
+                    tabBtn.setAttribute('aria-controls', `exp-panel-${exp.id}`);
+                    tabBtn.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+                    tabBtn.dataset.target = exp.id;
+                    tabList.appendChild(tabBtn);
+
+                    const panel = createEl('div', 'tab-panel' + (index === 0 ? ' active' : ''));
+                    panel.id = `exp-panel-${exp.id}`;
+                    panel.setAttribute('role', 'tabpanel');
+                    panel.setAttribute('aria-labelledby', `exp-tab-${exp.id}`);
+                    if (index !== 0) panel.hidden = true;
+
+                    const card = createEl('div', 'exp-card');
+                    const header = createEl('div', 'exp-header');
+                    const title = createEl('div', 'exp-title', exp.title);
+                    const metaRight = createEl('div', '');
+                    metaRight.appendChild(createEl('div', 'exp-company', exp.company));
+                    metaRight.appendChild(createEl('div', 'exp-location', exp.period + ' · ' + exp.location));
+                    header.appendChild(title);
+                    header.appendChild(metaRight);
+                    card.appendChild(header);
+                    const ul = createEl('ul', 'exp-points');
+                    exp.points.forEach(p => {
+                        ul.appendChild(createEl('li', '', p));
+                    });
+                    card.appendChild(ul);
+                    panel.appendChild(card);
+                    panels.appendChild(panel);
+                });
+
+                tabsWrapper.appendChild(tabList);
+                tabsWrapper.appendChild(panels);
+                container.appendChild(tabsWrapper);
+                sec.appendChild(container);
+                main.appendChild(sec);
+
+                bindTabs(tabList, panels);
+            }
+
+            // 渲染项目 Tabs
+            function renderProjects() {
+                const main = $('#mainContent');
+                const sec = createEl('section', '');
+                sec.id = 'projects';
+                const container = createEl('div', 'container');
+                container.appendChild(createEl('h2', 'section-title', '项目经历'));
+                container.appendChild(createEl('div', 'divider'));
+                container.appendChild(createEl('p', 'section-subtitle', '演讲、设计与内容产出'));
+
+                const tabsWrapper = createEl('div', 'tabs');
+                const tabList = createEl('div', 'tab-list');
+                tabList.setAttribute('role', 'tablist');
+                tabList.setAttribute('aria-label', '项目分类');
+                const panels = createEl('div', 'tab-panels');
+
+                resume.projects.forEach((proj, index) => {
+                    const tabBtn = createEl('button', 'tab-btn', proj.tabLabel);
+                    tabBtn.setAttribute('role', 'tab');
+                    tabBtn.setAttribute('id', `proj-tab-${proj.id}`);
+                    tabBtn.setAttribute('aria-controls', `proj-panel-${proj.id}`);
+                    tabBtn.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+                    tabBtn.dataset.target = proj.id;
+                    tabList.appendChild(tabBtn);
+
+                    const panel = createEl('div', 'tab-panel' + (index === 0 ? ' active' : ''));
+                    panel.id = `proj-panel-${proj.id}`;
+                    panel.setAttribute('role', 'tabpanel');
+                    panel.setAttribute('aria-labelledby', `proj-tab-${proj.id}`);
+                    if (index !== 0) panel.hidden = true;
+
+                    const card = createEl('div', 'project-card');
+                    const header = createEl('div', 'project-header');
+                    const name = createEl('div', 'project-name', proj.name);
+                    const meta = createEl('div', '');
+                    meta.appendChild(createEl('div', 'project-period', proj.period));
+                    meta.appendChild(createEl('div', 'project-location', proj.location));
+                    header.appendChild(name);
+                    header.appendChild(meta);
+                    card.appendChild(header);
+
+                    const tech = createEl('div', 'project-tech');
+                    proj.tech.forEach(t => tech.appendChild(createEl('span', 'tech-badge', t)));
+                    card.appendChild(tech);
+
+                    card.appendChild(createEl('p', 'project-description', proj.description));
+                    const results = createEl('ul', 'project-results');
+                    proj.results.forEach(r => results.appendChild(createEl('li', '', r)));
+                    card.appendChild(results);
+
+                    panel.appendChild(card);
+                    panels.appendChild(panel);
+                });
+
+                tabsWrapper.appendChild(tabList);
+                tabsWrapper.appendChild(panels);
+                container.appendChild(tabsWrapper);
+                sec.appendChild(container);
+                main.appendChild(sec);
+
+                bindTabs(tabList, panels);
+            }
+
+            // Tab 绑定函数
+            function bindTabs(tabList, panelsContainer) {
+                const tabs = $$('[role="tab"]', tabList);
+                const panels = $$('[role="tabpanel"]', panelsContainer);
+
+                function selectTab(targetId) {
+                    tabs.forEach(tab => {
+                        const selected = tab.dataset.target === targetId;
+                        tab.setAttribute('aria-selected', selected);
+                        tab.tabIndex = selected ? 0 : -1;
+                    });
+                    panels.forEach(panel => {
+                        const active = panel.id === `exp-panel-${targetId}` || panel.id === `proj-panel-${targetId}`;
+                        if (active) {
+                            panel.classList.add('active');
+                            panel.hidden = false;
+                        } else {
+                            panel.classList.remove('active');
+                            panel.hidden = true;
+                        }
+                    });
+                }
+
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        selectTab(tab.dataset.target);
+                    });
+                });
+
+                tabList.addEventListener('keydown', (e) => {
+                    const currentIndex = tabs.indexOf(document.activeElement);
+                    if (currentIndex === -1) return;
+                    let newIndex = null;
+                    if (e.key === 'ArrowRight') {
+                        newIndex = (currentIndex + 1) % tabs.length;
+                        e.preventDefault();
+                    } else if (e.key === 'ArrowLeft') {
+                        newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+                        e.preventDefault();
+                    }
+                    if (newIndex !== null) {
+                        tabs[newIndex].focus();
+                        selectTab(tabs[newIndex].dataset.target);
+                    }
+                });
+            }
+
+            // 渲染技能矩阵
+            function renderSkills() {
+                const main = $('#mainContent');
+                const sec = createEl('section', '');
+                sec.id = 'skills';
+                const container = createEl('div', 'container');
+                container.appendChild(createEl('h2', 'section-title', '专业技能'));
+                container.appendChild(createEl('div', 'divider'));
+                container.appendChild(createEl('p', 'section-subtitle', '语言 · 工具 · 领域能力'));
+
+                const grid = createEl('div', 'skills-grid');
+                resume.skills.forEach(cat => {
+                    const catDiv = createEl('div', 'skill-category');
+                    catDiv.appendChild(createEl('h3', '', cat.category));
+                    cat.items.forEach(item => {
+                        const itemDiv = createEl('div', 'skill-item');
+                        const label = createEl('div', 'skill-label');
+                        label.appendChild(createEl('span', '', item.name));
+                        label.appendChild(createEl('span', '', item.level + '%'));
+                        itemDiv.appendChild(label);
+                        const bar = createEl('div', 'skill-bar');
+                        const fill = createEl('div', 'skill-bar-fill');
+                        fill.style.width = item.level + '%';
+                        bar.appendChild(fill);
+                        itemDiv.appendChild(bar);
+                        catDiv.appendChild(itemDiv);
+                    });
+                    grid.appendChild(catDiv);
+                });
+                container.appendChild(grid);
+                sec.appendChild(container);
+                main.appendChild(sec);
+            }
+
+            // 渲染教育与证书
+            function renderEducationAndAwards() {
+                const main = $('#mainContent');
+                // 教育背景
+                const eduSec = createEl('section', '');
+                eduSec.id = 'education';
+                const eduContainer = createEl('div', 'container');
+                eduContainer.appendChild(createEl('h2', 'section-title', '教育背景'));
+                eduContainer.appendChild(createEl('div', 'divider'));
+                const eduCard = createEl('div', 'edu-card');
+                eduCard.appendChild(createEl('div', 'edu-icon', '🎓'));
+                const eduInfo = createEl('div', 'edu-info');
+                eduInfo.appendChild(createEl('h3', '', resume.education.school + ' ' + resume.education.major));
+                eduInfo.appendChild(createEl('div', 'edu-meta', resume.education.degree + ' · ' + resume.education.period + ' · ' + resume.education.location));
+                eduInfo.appendChild(createEl('div', 'edu-meta', 'GPA: ' + resume.education.gpa));
+                const courses = createEl('div', 'edu-courses');
+                resume.education.courses.forEach(c => courses.appendChild(createEl('span', 'course-tag', c)));
+                eduInfo.appendChild(courses);
+                if (resume.education.highschoolNote) {
+                    const note = createEl('p', 'edu-meta', resume.education.highschoolNote);
+                    note.style.marginTop = '8px';
+                    eduInfo.appendChild(note);
+                }
+                eduCard.appendChild(eduInfo);
+                eduContainer.appendChild(eduCard);
+                eduSec.appendChild(eduContainer);
+                main.appendChild(eduSec);
+
+                // 获奖与证书
+                const awardSec = createEl('section', '');
+                awardSec.id = 'awards';
+                const awardContainer = createEl('div', 'container');
+                awardContainer.appendChild(createEl('h2', 'section-title', '获奖与证书'));
+                awardContainer.appendChild(createEl('div', 'divider'));
+
+                const awardsDiv = createEl('div', 'awards-section');
+                const categories = [
+                    { key: 'national', label: '国家级', items: resume.awards.national },
+                    { key: 'provincial', label: '省市级', items: resume.awards.provincial },
+                    { key: 'county', label: '区县级及才艺', items: resume.awards.county }
+                ];
+                categories.forEach(cat => {
+                    if (cat.items && cat.items.length > 0) {
+                        const catDiv = createEl('div', 'awards-category');
+                        catDiv.appendChild(createEl('h4', '', cat.label));
+                        const ul = createEl('ul', 'awards-list');
+                        cat.items.forEach(item => ul.appendChild(createEl('li', '', item)));
+                        catDiv.appendChild(ul);
+                        awardsDiv.appendChild(catDiv);
+                    }
+                });
+                // 技能证书（文字）
+                if (resume.certificates && resume.certificates.length > 0) {
+                    const certDiv = createEl('div', 'awards-category');
+                    certDiv.appendChild(createEl('h4', '', '技能证书'));
+                    const ul = createEl('ul', 'awards-list');
+                    resume.certificates.forEach(c => ul.appendChild(createEl('li', '', c)));
+                    certDiv.appendChild(ul);
+                    awardsDiv.appendChild(certDiv);
+                }
+                awardContainer.appendChild(awardsDiv);
+
+                // 证书图片展示
+                const certGallerySection = createEl('div', 'awards-category');
+                certGallerySection.appendChild(createEl('h4', '', '获奖证书图片（部分）'));
+                const gallery = createEl('div', 'cert-gallery');
+                resume.certImages.forEach(img => {
+                    const item = createEl('div', 'cert-item');
+                    const image = createEl('img', '', '');
+                    image.src = img;
+                    image.alt = '获奖证书';
+                    image.dataset.full = img;
+                    item.appendChild(image);
+                    item.appendChild(createEl('div', 'cert-label', '点击查看大图'));
+                    item.addEventListener('click', () => openLightbox(img));
+                    gallery.appendChild(item);
+                });
+                certGallerySection.appendChild(gallery);
+
+                const aiCertGallerySection = createEl('div', 'awards-category');
+                aiCertGallerySection.appendChild(createEl('h4', '', 'AI 证书'));
+                const aiGallery = createEl('div', 'cert-gallery');
+                resume.aiCertImages.forEach(img => {
+                    const item = createEl('div', 'cert-item');
+                    const image = createEl('img', '', '');
+                    image.src = img;
+                    image.alt = 'AI证书';
+                    image.dataset.full = img;
+                    item.appendChild(image);
+                    item.appendChild(createEl('div', 'cert-label', '点击查看大图'));
+                    item.addEventListener('click', () => openLightbox(img));
+                    aiGallery.appendChild(item);
+                });
+                aiCertGallerySection.appendChild(aiGallery);
+
+                awardContainer.appendChild(certGallerySection);
+                awardContainer.appendChild(aiCertGallerySection);
+                awardSec.appendChild(awardContainer);
+                main.appendChild(awardSec);
+            }
+
+            // Lightbox 功能
+            function openLightbox(src) {
+                const lightbox = $('#lightbox');
+                const img = $('#lightboxImg');
+                img.src = src;
+                lightbox.classList.add('active');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+                const lightbox = $('#lightbox');
+                lightbox.classList.remove('active');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            // 渲染联系
+            function renderContact() {
+                const main = $('#mainContent');
+                const sec = createEl('section', '');
+                sec.id = 'contact';
+                const container = createEl('div', 'container');
+                container.appendChild(createEl('h2', 'section-title', '联系方式'));
+                container.appendChild(createEl('div', 'divider'));
+                const grid = createEl('div', 'contact-grid');
+
+                const items = [
+                    { icon: '📞', label: '电话', value: resume.contact.phone, type: 'tel' },
+                    { icon: '✉️', label: '邮箱', value: resume.contact.email, type: 'email' },
+                    { icon: '💬', label: '微信', value: resume.contact.wechat, type: 'text' },
+                    { icon: '📍', label: '地址', value: resume.contact.location, type: 'text' },
+                    { icon: '🏛️', label: '政治面貌', value: resume.contact.political, type: 'text' }
+                ];
+
+                items.forEach(item => {
+                    const card = createEl('div', 'contact-item');
+                    card.appendChild(createEl('div', 'contact-icon', item.icon));
+                    card.appendChild(createEl('div', 'contact-label', item.label));
+                    const value = createEl('div', 'contact-value', item.value);
+                    card.appendChild(value);
+                    if (item.type === 'email') {
+                        const copyBtn = createEl('button', 'copy-btn', '复制邮箱');
+                        copyBtn.dataset.email = item.value;
+                        copyBtn.addEventListener('click', function(e) {
+                            const email = this.dataset.email;
+                            if (navigator.clipboard) {
+                                navigator.clipboard.writeText(email).then(() => {
+                                    this.textContent = '已复制！';
+                                    setTimeout(() => this.textContent = '复制邮箱', 1500);
+                                });
+                            } else {
+                                const textArea = document.createElement('textarea');
+                                textArea.value = email;
+                                document.body.appendChild(textArea);
+                                textArea.select();
+                                document.execCommand('copy');
+                                document.body.removeChild(textArea);
+                                this.textContent = '已复制！';
+                                setTimeout(() => this.textContent = '复制邮箱', 1500);
+                            }
+                        });
+                        card.appendChild(copyBtn);
+                    }
+                    grid.appendChild(card);
+                });
+                container.appendChild(grid);
+                sec.appendChild(container);
+                main.appendChild(sec);
+            }
+
+            // 渲染页脚
+            function renderFooter() {
+                const footer = $('#footer');
+                footer.innerHTML = `<p>© 2026 ${resume.name} · 更新时间：2026.08</p>`;
+            }
+
+            // 初始化渲染
+            function init() {
+                renderNav();
+                renderHero();
+                renderHighlights();
+                renderExperience();
+                renderProjects();
+                renderSkills();
+                renderEducationAndAwards();
+                renderContact();
+                renderFooter();
+
+                // 返回顶部按钮
+                const backToTop = $('#backToTop');
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTop.classList.add('visible');
+                    } else {
+                        backToTop.classList.remove('visible');
+                    }
+                });
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+
+                // 深浅色切换
+                const themeToggle = $('#themeToggle');
+                themeToggle.addEventListener('click', () => {
+                    const current = document.documentElement.getAttribute('data-theme');
+                    if (current === 'dark') {
+                        document.documentElement.removeAttribute('data-theme');
+                        themeToggle.textContent = '🌓';
+                    } else {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                        themeToggle.textContent = '☀️';
+                    }
+                });
+
+                // 打印按钮
+                const printBtn = $('#printBtn');
+                printBtn.addEventListener('click', () => {
+                    window.print();
+                });
+
+                // Lightbox 关闭
+                const lightbox = $('#lightbox');
+                const lightboxClose = $('#lightboxClose');
+                lightboxClose.addEventListener('click', closeLightbox);
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) closeLightbox();
+                });
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') closeLightbox();
+                });
+            }
+
+            // DOM 加载完成后初始化
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+</html>
+```
